@@ -1,3 +1,4 @@
+const { request } = require("express");
 const express = require("express");
 const userModel = require("../models/users");
 const app = express();
@@ -9,13 +10,16 @@ app.get("/users", async (request, response) => {
     response.status(500).send(error);
   }
 });
-app.post("/user", async (request, response) => {
-  const user = new userModel(request.body);
+
+app.post("/user", async (req, res) => {
+  const user = new userModel(req.body);
+  // const user =  userModel.create(request)
+  console.log("user", user);
   try {
     await user.save();
-    response.send(user);
+    res.send(user);
   } catch (error) {
-    response.status(500).send(error);
+    res.status(500).send(error);
   }
 });
 module.exports = app;
