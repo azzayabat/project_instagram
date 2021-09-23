@@ -53,6 +53,14 @@ app.post("/login", async (req, res) => {
       }
     }
   });
+
+  // bcrypt.compare(password, user.password, function (err, result) {
+  //   if (err) {
+  //     console.log("error");
+  //   } else {
+  //     console.log("resulyjhfdkg");
+  //   }
+  // });
 });
 
 module.exports = app;
