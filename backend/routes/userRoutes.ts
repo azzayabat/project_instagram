@@ -5,20 +5,20 @@ import userModel from '../models/Users'
 const userRouter = express.Router()
 
 const app = express()
-// var salt = bcryptjs.genSaltSync(10)
+//  var salt = bcrypt.genSaltSync(10);
 
-app.get('/users', async (req, res) => {
+userRouter.get('/users', async (request, response) => {
     const users = await userModel.find({})
     try {
-        res.send(users)
+        response.send(users)
     } catch (error) {
-        res.status(500).send(error)
+        response.status(500).send(error)
     }
 })
 
-app.post('/user', async (req, res) => {
+userRouter.post('/user', async (req, res) => {
     //hashing passwords
-    // req.body.password = bcryptjs.hashSync(req.body.password, salt)
+    //    req.body.password = bcrypt.hashSync(req.body.password, salt);
     //creating a new user model with hashed pass
     const user = new userModel(req.body)
     // const user =  userModel.create(request)
@@ -37,7 +37,7 @@ app.post('/user', async (req, res) => {
     }
 })
 
-app.post('/login', async (req, res) => {
+userRouter.post('/login', async (req, res) => {
     const { email, password } = req.body
 
     //finds the user and returns it as user
@@ -64,35 +64,3 @@ app.post('/login', async (req, res) => {
 })
 
 export default userRouter
-
-// userRoute-oosoo controller-oos ashiglah
-// controller
-//  - user
-//  - post   validate req
-// Service
-//  - userService
-//  - postService
-
-// userRouter.get('/users', async (request, response) => {
-//     const users = await userModel.find({})
-//     try {
-//         response.send(users)
-//     } catch (error) {
-//         response.status(500).send(error)
-//     }
-// })
-// userRouter.post('/user', async (request, response) => {
-//     const user = new userModel(request.body)
-//     try {
-//         await user.save()
-//         response.send(user)
-//     } catch (error) {
-//         response.status(500).send(error)
-//     }
-// })
-
-// export default userRouter
-
-// const { request } = require('express')
-// const express = require('express')
-// const userModel = require('../models/users')
