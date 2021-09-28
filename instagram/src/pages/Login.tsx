@@ -30,7 +30,6 @@ const SignUp = () => {
           headers: { "Content-Type": "application/json" },
         })
         .then((response) => {
-          // response.send(data);
           console.log("res:", response);
         })
         .catch((error) => {
