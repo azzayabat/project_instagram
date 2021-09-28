@@ -4,9 +4,9 @@ import { loginControllerPost } from '../controller/loginController'
 
 const userRouter = express.Router()
 
+userRouter.post('/login', loginControllerPost)
 userRouter.get('/users', userControllerGet)
 userRouter.post('/user', userControllerPost)
-userRouter.post('/login', loginControllerPost)
 
 // import bcryptjs from 'bcryptjs'
 // import bcryptjs = require('bcryptjs')

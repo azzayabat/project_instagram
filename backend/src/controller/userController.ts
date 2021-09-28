@@ -1,5 +1,7 @@
 import userModel from '../models/Users'
+import bcrypt from 'bcrypt'
 
+var salt = bcrypt.genSaltSync(10)
 export const userControllerGet = async (request: any, response: any) => {
     const users = await userModel.find({})
     try {
@@ -10,6 +12,7 @@ export const userControllerGet = async (request: any, response: any) => {
 }
 
 export const userControllerPost = async (request: any, response: any) => {
+    request.body.password = bcrypt.hashSync(request.body.password, salt)
     const user = new userModel(request.body)
     // console.log('user', user)
     try {
