@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./SignUp.css";
 import { FaFacebookSquare } from "react-icons/fa";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const SignUp = () => {
   const [username, setUsername] = useState("");
@@ -15,25 +16,26 @@ const SignUp = () => {
   //     .then((data) => setResult(data.total));
   // }, []);
 
-  const LogIn = () => {
+  const register = () => {
     // e.preventDefault();
-    console.log("login");
+    console.log("sign up");
     const data = {
       username: username,
       email: email,
       password: password,
     };
-    console.log("data", data);
+    // console.log("data", data);
     if (data) {
       axios
-        .post("http://localhost:5000/user", data, {
+        .post("http://localhost:5000/signup", data, {
           headers: { "Content-Type": "application/json" },
         })
         .then((response) => {
-          console.log("res:", response);
+          console.log("responsekjfnkjds", response);
+          // console.log("res:", response);
         })
         .catch((error) => {
-          console.log("======error=====:", error);
+          console.log("======error sign up page=====:", error);
         });
     }
   };
@@ -68,7 +70,7 @@ const SignUp = () => {
             placeholder="Password"
           ></input>
 
-          <button type="button" id="login" onClick={LogIn}>
+          <button type="button" id="login" onClick={register}>
             Sign up
           </button>
           <div className="divider">
@@ -88,8 +90,9 @@ const SignUp = () => {
       </div>
       <div className="bottomBox">
         <p id="bottomTitle">
-          Don't have an account?{" "}
-          <a onClick={() => console.log("clicked")}>Sign Up</a>
+          <Link to="/">
+            <a onClick={() => console.log("sign up page")}>Log In</a>
+          </Link>
         </p>
       </div>
     </div>

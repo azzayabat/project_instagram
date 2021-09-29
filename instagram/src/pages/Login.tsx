@@ -16,26 +16,19 @@ const SignUp = () => {
   //     .then((data) => setResult(data.total));
   // }, []);
 
-  const LogIn = () => {
-    // e.preventDefault();
-    console.log("login");
-    const data = {
-      email: email,
-      password: password,
-    };
-    console.log("data", data);
-    if (data) {
-      axios
-        .post("http://localhost:5000/login", data, {
-          headers: { "Content-Type": "application/json" },
-        })
-        .then((response) => {
-          console.log("res:", response);
-        })
-        .catch((error) => {
-          console.log("======error=====:", error);
-        });
-    }
+  const LogIn = async () => {
+    axios
+      .post("http://localhost:5000/login", {
+        email: email,
+        password: password,
+      })
+      .then((response) => {
+        console.log("responsekjfnkjds", response);
+        // console.log("res:", response);
+      })
+      .catch((error) => {
+        console.log("======error sign up page=====:", error);
+      });
   };
 
   return (
@@ -83,7 +76,7 @@ const SignUp = () => {
         <p id="bottomTitle">
           Don't have an account?{" "}
           <Link to="/signup">
-            <a onClick={() => console.log("clicked")}>Sign Up</a>
+            <a onClick={() => console.log("login page")}>Sign Up</a>
           </Link>
         </p>
       </div>
