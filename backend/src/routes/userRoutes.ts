@@ -1,12 +1,16 @@
-import express from 'express'
-import { userControllerGet, userControllerPost } from '../controller/userController'
-import { loginControllerPost } from '../controller/loginController'
+import express from 'express';
+import { authentication } from '../controller/authController';
+import { userControllerGet, login, register } from '../controller/userController';
 
-const userRouter = express.Router()
+const userRouter = express.Router();
 
-userRouter.post('/login', loginControllerPost)
-userRouter.get('/users', userControllerGet)
-userRouter.post('/user', userControllerPost)
+userRouter.post('/login', login);
+userRouter.get('/users', userControllerGet);
+userRouter.post('/signup', register);
+userRouter.get('/post', authentication);
+
+// controller dotor end point orj ireh yostoi
+//
 
 // import bcryptjs from 'bcryptjs'
 // import bcryptjs = require('bcryptjs')
@@ -69,4 +73,4 @@ userRouter.post('/user', userControllerPost)
 //     // });
 // })
 
-export default userRouter
+export default userRouter;
