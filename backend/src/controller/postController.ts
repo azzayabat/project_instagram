@@ -15,7 +15,7 @@ export const savePost = async (request: any, response: any) => {
     }
 };
 
-export const getAllPost = async (request: any, response: any) => {
+export const getAllPostOfUser = async (request: any, response: any) => {
     // console.log('post all', request.user);
 
     const post = await postModel.find({ postedBy: request.user.id });

@@ -2,15 +2,11 @@ import mongoose from 'mongoose';
 import bcrypt from 'bcrypt';
 import { sign } from 'jsonwebtoken';
 import * as dotenv from 'dotenv';
+import { customValidateEmail } from '../utility/validation';
 
 dotenv.config();
 
 const { Schema } = mongoose;
-
-const customValidateEmail = function (email: string) {
-    var re = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-    return re.test(email);
-};
 
 const userSchema = new Schema({
     username: { type: String, required: true, unique: true },
@@ -32,6 +28,7 @@ userSchema.pre('save', function () {
 });
 
 userSchema.methods.checkPassword = async function (enteredPassword) {
+    console.log('pass entered:', enteredPassword);
     return await bcrypt.compare(enteredPassword, this.password);
 };
 

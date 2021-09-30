@@ -1,6 +1,6 @@
 import userModel from '../models/Users';
 
-export const userControllerGet = async (request: any, response: any) => {
+export const users = async (request: any, response: any) => {
     const users = await userModel.find({});
     try {
         response.send(users);
@@ -25,6 +25,7 @@ export const register = async (request: any, response: any) => {
         if (error.code === 11000) {
             // request.send({ error: 'email is already in use' })
             // request.send('valid')
+            response.send({ status: 'InUse' });
             console.log('email is already in use');
         } else {
             // request.status(500).send(error)
@@ -37,9 +38,15 @@ export const login = async (request: any, response: any) => {
     const { email, password } = request.body;
 
     const res = userModel.findOne({ email: email }, async function (err: any, result: any) {
+        console.log('res user', result);
+
         if (err) {
             console.log("user doesn't exist, please sign up!", err);
         } else {
+            if (result === null) {
+                console.log('result is null');
+                return response.status(501).send('invalid');
+            }
             console.log('result', result);
             // let encryptPassword = await bcrypt.compare(password, result.password)
             const success = await result.checkPassword(password);

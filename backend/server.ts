@@ -14,7 +14,7 @@ const uri: string = process.env.ATLAS_URI || '';
 app.use(cors());
 app.use(express.json());
 
-//router
+//routers
 app.use(userRouter);
 app.use(postRouter);
 
