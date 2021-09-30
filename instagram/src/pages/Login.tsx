@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./SignUp.css";
 import { FaFacebookSquare } from "react-icons/fa";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 const SignUp = () => {
   const [username, setUsername] = useState("");
@@ -10,11 +10,7 @@ const SignUp = () => {
   const [password, setPassword] = useState("");
   const [result, setResult] = useState({});
 
-  // useEffect(() => {
-  //   fetch("http://localhost:5000/user")
-  //     .then((response) => response.json())
-  //     .then((data) => setResult(data.total));
-  // }, []);
+  const history = useHistory();
 
   const LogIn = async () => {
     axios
@@ -23,11 +19,17 @@ const SignUp = () => {
         password: password,
       })
       .then((response) => {
-        console.log("responsekjfnkjds", response);
+        const isLoggedIn = response.data.accessToken;
+
+        if (isLoggedIn) {
+          history.push("/timeline");
+        }
+
+        console.log("token:", response.data.accessToken);
         // console.log("res:", response);
       })
       .catch((error) => {
-        console.log("======error sign up page=====:", error);
+        console.log(error);
       });
   };
 

@@ -1,7 +1,11 @@
-export const Timeline = () => {
+import React from "react";
+
+const Timeline = () => {
   return (
     <div>
-      <p>Timeline</p>
+      <p>timeline</p>
     </div>
   );
 };
+
+export default Timeline;

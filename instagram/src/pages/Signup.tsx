@@ -19,20 +19,23 @@ const SignUp = () => {
   const register = () => {
     // e.preventDefault();
     console.log("sign up");
+
     const data = {
       username: username,
       email: email,
       password: password,
     };
-    // console.log("data", data);
+
     if (data) {
       axios
         .post("http://localhost:5000/signup", data, {
           headers: { "Content-Type": "application/json" },
         })
         .then((response) => {
-          console.log("responsekjfnkjds", response);
-          // console.log("res:", response);
+          const status = response.data.status;
+          if (status === "InUse") {
+            console.log("registered email");
+          }
         })
         .catch((error) => {
           console.log("======error sign up page=====:", error);
