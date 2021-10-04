@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./SignUp.css";
 import { FaFacebookSquare } from "react-icons/fa";
 import axios from "axios";
-import { Link, useHistory } from "react-router-dom";
+import { Link, useHistory, Redirect } from "react-router-dom";
 
 const SignUp = () => {
   const [username, setUsername] = useState("");
@@ -22,10 +22,13 @@ const SignUp = () => {
         const isLoggedIn = response.data.accessToken;
 
         if (isLoggedIn) {
-          history.push("/timeline");
+          history.replace("/timeline");
+          // return <Redirect to="/timeline" />;
+        } else {
+          history.replace("/");
         }
 
-        console.log("token:", response.data.accessToken);
+        console.log("token response:", response);
         // console.log("res:", response);
       })
       .catch((error) => {
