@@ -1,15 +1,23 @@
 import React from "react";
 import {
-  FaHome,
-  FaCompass,
-  FaHeart,
-  FaFacebookMessenger,
-  FaPowerOff,
-  FaDotCircle,
-  FaComment,
-  FaSave,
-  FaSmile,
-} from "react-icons/fa";
+  // FaHome,
+  // FaCompass,
+  // FaHeart,
+  // FaFacebookMessenger,
+  // FaPowerOff,
+  // FaDotCircle,
+  // FaComment,
+  // FaSave,
+  // FaSmile,
+  AiOutlineHome,
+  AiFillMessage,
+  AiFillCompass,
+  AiFillHeart,
+  AiOutlinePoweroff,
+  AiOutlineCompass,
+  AiOutlineHeart,
+} from "react-icons/ai";
+import { IconContext } from "react-icons";
 
 export const Header = () => {
   return (
@@ -20,7 +28,7 @@ export const Header = () => {
         display: "flex",
         justifyContent: "space-evenly",
         alignItems: "center",
-        borderBottom: "1px solid black",
+        borderBottom: "1px solid #dbdbdb",
         backgroundColor: "white",
         position: "sticky",
         top: 0,
@@ -38,19 +46,19 @@ export const Header = () => {
         }}
       >
         <span>
-          <FaHome size="1.5em" id="fbIcon" color="black" />
+          <AiOutlineHome size="1.8em" id="fbIcon" color="black" />
         </span>
         <span>
-          <FaFacebookMessenger size="1.5em" id="fbIcon" color="black" />
+          <AiOutlinePoweroff size="1.8em" id="fbIcon" color="black" />
         </span>
         <span>
-          <FaCompass size="1.5em" id="fbIcon" color="black" />
+          <AiOutlineCompass size="1.8em" id="fbIcon" color="black" />
         </span>
         <span>
-          <FaHeart size="1.5em" id="fbIcon" color="black" />
+          <AiOutlineHeart size="1.8em" id="fbIcon" color="black" />
         </span>
         <span>
-          <FaPowerOff size="1.5em" id="fbIcon" color="black" />
+          <AiOutlinePoweroff size="1.8em" id="fbIcon" color="black" />
         </span>
       </div>
     </div>

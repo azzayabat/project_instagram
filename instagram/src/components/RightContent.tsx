@@ -5,29 +5,29 @@ export const RightContent = () => {
     <div
       style={{
         display: "flex",
+        // width: "250px",
+
         alignItems: "center",
         marginTop: "8px",
         marginBottom: "8px",
+        justifyContent: "space-between",
       }}
     >
-      <div
-        style={{
-          width: 32,
-          height: 32,
-          border: "1px solid black",
-          borderRadius: 16,
-          marginRight: "8px",
-        }}
-      />
+      <div style={{ display: "flex", alignItems: "center" }}>
+        <div
+          style={{
+            width: 32,
+            height: 32,
+            border: "1px solid black",
+            borderRadius: 16,
+            marginRight: "8px",
+          }}
+        />
 
-      <div>acc name</div>
-      <div
-        style={{
-          backgroundColor: "green",
-        }}
-      >
-        follow
+        <div>zayaa_zm</div>
       </div>
+
+      <div>follow</div>
     </div>
   );
 };

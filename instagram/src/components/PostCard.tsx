@@ -1,14 +1,44 @@
 import React from "react";
+import // FaHome,
+// FaCompass,
+// FaHeart,
+// FaFacebookMessenger,
+// FaPowerOff,
+// FaDotCircle,
+// FaComment,
+// FaSave,
+// FaSmile,
+"react-icons/ai";
 import {
-  FaHome,
-  FaCompass,
-  FaHeart,
-  FaFacebookMessenger,
-  FaPowerOff,
-  FaDotCircle,
-  FaComment,
-  FaSave,
-  FaSmile,
+  AiFillBook,
+  AiFillFolder,
+  AiOutlineAccountBook,
+  AiOutlineArrowDown,
+  AiOutlineBlock,
+  AiOutlineBook,
+  AiOutlineBorderVerticle,
+  AiOutlineCiCircle,
+  AiOutlineComment,
+  AiOutlineDotChart,
+  AiOutlineDown,
+  AiOutlineFileMarkdown,
+  AiOutlineHeart,
+  AiOutlineMessage,
+  AiOutlineMore,
+  AiOutlineSafety,
+  AiOutlineSave,
+  AiOutlineSend,
+  AiOutlineSmallDash,
+  AiOutlineSmile,
+  AiOutlineVerticalAlignBottom,
+  AiTwotoneSave,
+  AiTwotoneSmile,
+} from "react-icons/ai";
+import {
+  FaBookmark,
+  FaGripHorizontal,
+  FaGripVertical,
+  FaRulerHorizontal,
 } from "react-icons/fa";
 
 export const PostCard = () => {
@@ -51,9 +81,11 @@ export const PostCard = () => {
                 marginRight: 15,
               }}
             ></div>
-            <span className="post_username">Gegii_Zaya0316</span>
+            <span className="post_username">zayaa_zm</span>
           </div>
-          <FaDotCircle size="1.5em" id="fbIcon" color="black" />
+          <div>
+            <AiOutlineMore size="2em" id="fbIcon" color="black" />
+          </div>
         </div>
 
         {/* image */}
@@ -77,54 +109,116 @@ export const PostCard = () => {
             }}
           >
             <div className="footer_reaction_icons" style={{ display: "flex" }}>
-              <FaHeart
-                size="1.7em"
+              <AiOutlineHeart
+                size="2em"
                 id="fbIcon"
                 color="black"
                 style={{ paddingRight: 10 }}
               />
-              <FaComment
-                size="1.7em"
+              <AiOutlineComment
+                size="2em"
                 id="fbIcon"
                 color="black"
                 style={{ paddingRight: 10 }}
               />
-              <FaFacebookMessenger
-                size="1.7em"
+              <AiOutlineSend
+                size="2em"
                 id="fbIcon"
                 color="black"
                 style={{ paddingRight: 10 }}
               />
             </div>
-            <FaSave
-              size="1.7em"
+            <AiOutlineBook
+              size="2em"
               id="fbIcon"
               color="black"
               style={{ padding: 8 }}
             />
           </div>
-          <div>
-            {/* comments loop */}
-            <div style={{ display: "flex" }}>
-              <span>username </span>
-              &nbsp;
-              <span>comment</span>
-            </div>
 
-            <div style={{ display: "flex" }}>
-              <span>username </span>
-              &nbsp;
-              <span>comment</span>
+          {/* comment loop */}
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              paddingRight: "16px",
+            }}
+          >
+            <div
+              style={{
+                display: "block",
+                justifyContent: "flex-start",
+                paddingBottom: "0.3em",
+                alignItems: "center",
+                alignContent: "stretch",
+                fontSize: "14px",
+                lineHeight: "18px",
+                fontFamily:
+                  '-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif',
+
+                // overflow: "break",
+              }}
+            >
+              <span>
+                <span style={{ fontWeight: 600, color: "black" }}>
+                  username &nbsp;
+                </span>
+                With an airy, organic sensibility, #santamonicaproper interiors
+                reflect the rare, relaxed elegance and sought-after serenity of
+                life along the West Coast.
+              </span>
             </div>
-            <div style={{ display: "flex" }}>
-              <span>username </span>
-              &nbsp;
-              <span>comment</span>
+            <span>
+              <AiOutlineHeart />
+            </span>
+          </div>
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              paddingRight: "16px",
+            }}
+          >
+            <div
+              style={{
+                display: "block",
+                justifyContent: "flex-start",
+                paddingBottom: "0.3em",
+                alignItems: "center",
+                alignContent: "stretch",
+                fontSize: "14px",
+                lineHeight: "18px",
+                fontFamily:
+                  '-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif',
+
+                // overflow: "break",
+              }}
+            >
+              <span>
+                <span style={{ fontWeight: 600, color: "black" }}>
+                  username &nbsp;
+                </span>
+                Уур амьсгалын өөрчлөлтийн залуу тэмцэгч @GretaThunberg Миланд
+                болсон залуучуудын уур амьсгалын дээд хэмжээний уулзалтын үеэр
+                үг хэлсэн бөгөөд “There is no Planet B!
+              </span>
             </div>
+            <span>
+              <AiOutlineHeart />
+            </span>
           </div>
         </div>
-        <div style={{ paddingLeft: "16px" }}>
-          <span>1 hour ago</span>
+        <div style={{ paddingLeft: "14px", paddingBottom: "1em" }}>
+          <span
+            style={{
+              fontSize: "11px",
+              lineHeight: "18px",
+              color: "#8e8e8e",
+              fontFamily: "sans-serif",
+            }}
+          >
+            1 HOUR AGO
+          </span>
         </div>
 
         <div
@@ -135,8 +229,8 @@ export const PostCard = () => {
             alignItems: "center",
           }}
         >
-          <FaSmile
-            size="1.5em"
+          <AiOutlineSmile
+            size="2.5em"
             id="fbIcon"
             color="black"
             style={{ paddingLeft: "16px", marginRight: "8px" }}
