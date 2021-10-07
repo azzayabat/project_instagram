@@ -136,11 +136,47 @@ export const PostCard = () => {
           </div>
 
           {/* comment loop */}
+
           <div
             style={{
               display: "flex",
               alignItems: "center",
               paddingRight: "16px",
+              justifyContent: "space-between",
+            }}
+          >
+            <div
+              style={{
+                display: "block",
+                justifyContent: "flex-start",
+                paddingBottom: "0.3em",
+                alignItems: "center",
+                alignContent: "stretch",
+                fontSize: "14px",
+                lineHeight: "18px",
+                fontFamily:
+                  '-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif',
+
+                // overflow: "break",
+              }}
+            >
+              <span>
+                <span style={{ fontWeight: 600, color: "black" }}>
+                  username &nbsp;
+                </span>
+                “There is no Planet B!
+              </span>
+            </div>
+            <div>
+              <AiOutlineHeart />
+            </div>
+          </div>
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              paddingRight: "16px",
+              justifyContent: "space-between",
             }}
           >
             <div
@@ -167,15 +203,16 @@ export const PostCard = () => {
                 life along the West Coast.
               </span>
             </div>
-            <span>
+            <div>
               <AiOutlineHeart />
-            </span>
+            </div>
           </div>
           <div
             style={{
               display: "flex",
               alignItems: "center",
               paddingRight: "16px",
+              justifyContent: "space-between",
             }}
           >
             <div
@@ -197,14 +234,12 @@ export const PostCard = () => {
                 <span style={{ fontWeight: 600, color: "black" }}>
                   username &nbsp;
                 </span>
-                Уур амьсгалын өөрчлөлтийн залуу тэмцэгч @GretaThunberg Миланд
-                болсон залуучуудын уур амьсгалын дээд хэмжээний уулзалтын үеэр
-                үг хэлсэн бөгөөд “There is no Planet B!
+                Назад в прошлое
               </span>
             </div>
-            <span>
+            <div>
               <AiOutlineHeart />
-            </span>
+            </div>
           </div>
         </div>
         <div style={{ paddingLeft: "14px", paddingBottom: "1em" }}>
