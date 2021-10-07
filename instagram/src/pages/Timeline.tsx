@@ -59,15 +59,14 @@ const Timeline = () => {
         >
           <div style={{ position: "fixed" }}>
             <div style={{ display: "flex", alignItems: "center" }}>
-              <div
-                className="post_avatar"
+              <img
                 style={{
                   width: 56,
                   height: 56,
-                  border: "1px solid black",
                   borderRadius: 28,
-                  marginRight: 15,
+                  marginRight: "8px",
                 }}
+                src="https://images.unsplash.com/photo-1494253109108-2e30c049369b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
               />
               <span>zayaa_zm</span>
             </div>

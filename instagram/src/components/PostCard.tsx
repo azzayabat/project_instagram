@@ -48,7 +48,7 @@ export const PostCard = () => {
       style={{
         border: "1px solid #e5e5e5",
         borderRadius: "3px",
-        width: "615px",
+        width: "614px",
         marginBottom: "20px",
       }}
     >
@@ -71,16 +71,15 @@ export const PostCard = () => {
               alignItems: "center",
             }}
           >
-            <div
-              className="post_avatar"
+            <img
               style={{
                 width: 32,
                 height: 32,
-                border: "1px solid black",
                 borderRadius: 16,
-                marginRight: 15,
+                marginRight: "8px",
               }}
-            ></div>
+              src="https://images.unsplash.com/photo-1494253109108-2e30c049369b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+            />
             <span className="post_username">zayaa_zm</span>
           </div>
           <div>
@@ -91,7 +90,7 @@ export const PostCard = () => {
         {/* image */}
         <img
           style={{ width: "614px", height: "614px" }}
-          src="https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=464&q=80"
+          src="https://images.unsplash.com/photo-1444210971048-6130cf0c46cf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2346&q=80"
         />
       </div>
 
